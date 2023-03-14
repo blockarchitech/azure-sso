@@ -15,31 +15,11 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+// static files
+app.use(express.static('static'));
 
 app.get('/', (req, res) => {
-  var html = `
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>SSO Request Generator</title>
-  </head>
-  <body>
-    <h1>SSO Request Generator</h1>
-    <p>Enter your subscription ID, domain name, and resource group to generate a SSO request.</p>
-    <p>Ensure you have the Azure CLI installed, logged in, and have the correct subscription set or this will not work properly.</p>
-    <form action="/sso" method="post">
-      <label for="subid">Subscription ID:</label><br>
-      <input type="text" id="subid" name="subid"><br>
-      <label for="domain">Domain Name:</label><br>
-      <input type="text" id="domain" name="domain"><br>
-      <label for="rg">Resource Group:</label><br>
-      <input type="text" id="rg" name="rg"><br><br>
-      <input type="submit" value="Submit">
-    </form>
-  </body>
-  </html>
-  `
-  res.send(html);
+  res.sendFile(__dirname + '/static/index.html');
 });
 
 app.post('/sso', (req, res) => {
@@ -80,6 +60,8 @@ app.post('/sso', (req, res) => {
     res.send(`Error getting domain: ${err}`);
   });
 });
+
+
 
 app.listen(3000, () => {
   console.log('SSO Request Generator on 3000');

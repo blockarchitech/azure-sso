@@ -1,5 +1,5 @@
 // Since Microsoft Azure remove the app service domain control center, I have to create a workaround to redirect to the domain portal.
-// This is a simple express app that will redirect to the domain portal when you GET /00000000-0000-0000-0000-000000000000 (your subscription id)
+// This is a simple express app that will redirect to the domain portal when you GET /
 // Hope this helps someone else.
 // Note: You must have:
 // 1. A domain registered with Azure

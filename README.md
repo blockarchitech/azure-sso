@@ -24,7 +24,7 @@ According to a [Microsoft QNA thread I made](https://learn.microsoft.com/en-us/a
 
 ## Contributing
 
-If you want to contribute, please do. I don't really mess with SAML often, and I'm sure there are better ways to do this. I just wanted to get it working, and I'm sure there are better ways to do it.
+If you want to contribute, please do. I don't really mess with SAML often, and I just wanted to get it working. I'm sure there are better ways to do this.
 
 ## License
 
